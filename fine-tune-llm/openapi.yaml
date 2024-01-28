@@ -1,0 +1,185 @@
+openapi: 3.0.0
+info:
+  title: Food Blog API
+  description: Backend server to serve the blog post related data.
+  version: 0.1.9
+servers:
+  - url: http://api.example.com/v1
+    description: Optional server description, e.g. Main (production) server
+  - url: http://staging-api.example.com
+    description: Optional server description, e.g. Internal staging server for testing
+paths:
+  /latest-blog-posts:
+    get:
+      summary: Returns a list of latest blog posts.
+      description: The latest blog posts created are retrieved based on the timestamp of blog creation
+      parameters:
+        - in: header
+          name: requestId
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: size
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':    # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/BlogListResponse'
+  /blogs-by-cuisine:
+    get:
+      summary: Returns a list of latest blog posts based on the Cuisine.
+      description: The list of blog posts matching the Cuisine
+      parameters:
+        - in: header
+          name: requestId
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: size
+          schema:
+            type: integer
+          required: true
+        - in: query
+          name: page
+          schema:
+            type: integer
+          required: true
+        - in: query
+          name: cuisine
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':    # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/BlogListResponse'
+  /blogs-by-starting-letter:
+    get:
+      summary: Returns a list of blog posts based on the starting letter.
+      description: The list of blog posts matching the starting letter.
+      parameters:
+        - in: header
+          name: requestId
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: size
+          schema:
+            type: integer
+          required: true
+        - in: query
+          name: page
+          schema:
+            type: integer
+          required: true
+        - in: query
+          name: letter
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':    # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/BlogListResponse'
+  /blog-post:
+    get:
+      summary: Returns a the blog post based on the blogId.
+      description: The blog data incluing the formatting data based on the blogId
+      parameters:
+        - in: header
+          name: requestId
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: blogId
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':    # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BlogData'
+components:
+  schemas:
+    BlogListResponse:
+      type: object
+      properties:
+        requestId:
+          type: string
+        latestBlogs:
+          type: array
+          items:
+            type: object
+            properties:
+              dish:
+                type: string
+                example: Butter Chicken
+              blogId:
+                type: string
+                example: uniqueId
+              cookingTime:
+                type: string
+                example: 30 minutes
+              publishedOn:
+                type: string
+                example: 01-21-2024
+              image:
+                type: string
+                example: /some/path/to/image
+              cuisine:
+                type: string
+                example: India
+    BlogData:
+      type: object
+      properties:
+        requestId:
+          type: string
+          example: uniqueRequestId
+        blogData:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/BlogDataObject'
+    BlogDataObject:
+      type: object
+      properties:
+        type:
+          type: string
+        sequence:
+          type: integer
+        text:
+          type: array
+          items:
+            type: string
+        formatting:
+          type: object
+          $ref: '#/components/schemas/Formatting'
+    Formatting:
+      type: object
+      properties:
+        bold:
+          type: boolean
+        italic:
+          type: boolean
+        fontSize:
+          type: string
+        fontColor:
+          type: string      

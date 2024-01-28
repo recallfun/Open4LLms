@@ -1,0 +1,103 @@
+[
+    {
+        "type": "title",
+        "sequence": 1,
+        "text": "Lihapiirakka (Meat Pie)",
+        "formatting": {
+            "bold": true,
+            "italic": false,
+            "fontSize": "16px",
+            "fontColor": "#cc0000"
+        }
+    },
+    {
+        "type": "cuisine",
+        "sequence": 2,
+        "text": "Finnish",
+        "formatting": {
+            "bold": false,
+            "italic": false,
+            "fontSize": "18px",
+            "fontColor": "#ffcc00"
+        }
+    },
+    {
+        "type": "preparationTime",
+        "sequence": 3,
+        "text": "15 minutes",
+        "formatting": {
+            "bold": false,
+            "italic": false,
+            "fontSize": "16px",
+            "fontColor": "#cc0000"
+        }
+    },
+    {
+        "type": "cookingTime",
+        "sequence": 4,
+        "text": "45 minutes",
+        "formatting": {
+            "bold": false,
+            "italic": false,
+            "fontSize": "16px",
+            "fontColor": "#cc0000"
+        }
+    },
+    {
+        "type": "equipmentList",
+        "sequence": 5,
+        "text": [
+            "Oven",
+            "Baking sheet",
+            "Mixing bowl",
+            "Knife",
+            "Cutting board"
+        ],
+        "formatting": {
+            "bold": false,
+            "italic": true,
+            "fontSize": "14px",
+            "fontColor": "#990000"
+        }
+    },
+    {
+        "type": "ingredientList",
+        "sequence": 6,
+        "text": [
+            "500g ground beef",
+            "1 onion, finely chopped",
+            "2 cloves garlic, minced",
+            "Salt and pepper to taste",
+            "1 egg, beaten",
+            "4 sheets frozen puff pastry",
+            "Sesame seeds for garnishing"
+        ],
+        "formatting": {
+            "bold": false,
+            "italic": false,
+            "fontSize": "14px",
+            "fontColor": "#cc6600"
+        }
+    },
+    {
+        "type": "instructions",
+        "sequence": 7,
+        "text": [
+            "Preheat your oven to 200\u00b0C (400\u00b0F).",
+            "In a mixing bowl, combine the ground beef, chopped onion, minced garlic, salt, and pepper.",
+            "Shape the meat mixture into four equal balls.",
+            "Roll out one sheet of puff pastry into a large rectangle.",
+            "Place one meat ball in the center of the pastry and fold the edges over it to enclose the filling completely.",
+            "Repeat this process with the remaining three meat balls and puff pastry sheets.",
+            "Brush the top of each pie with beaten egg and sprinkle with sesame seeds.",
+            "Place the pies on the baking sheet and bake for about 45 minutes or until golden brown.",
+            "Let the pies cool for a few minutes before serving hot."
+        ],
+        "formatting": {
+            "bold": true,
+            "italic": false,
+            "fontSize": "14px",
+            "fontColor": "#cc3300"
+        }
+    }
+]
